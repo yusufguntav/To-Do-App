@@ -33,8 +33,9 @@ class Tasks extends ChangeNotifier {
     notifyListeners();
   }
 
-  removeTask(Task task) {
+  removeTask(Task task, BuildContext context) {
     _tasks.remove(task);
+    FileBrain.saveAndWrite(context);
     notifyListeners();
   }
 }

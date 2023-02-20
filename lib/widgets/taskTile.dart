@@ -51,7 +51,8 @@ class TaskTile extends StatelessWidget {
             ),
           ],
         ).show().then((_) => answer == true
-            ? Provider.of<Tasks>(context, listen: false).removeTask(task)
+            ? Provider.of<Tasks>(context, listen: false)
+                .removeTask(task, context)
             : null);
       },
       title: Text(
